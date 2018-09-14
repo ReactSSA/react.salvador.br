@@ -6,6 +6,7 @@
 
     --color-primary: #282d5f;
     --color-lightBlue: #94fbff;
+    --color-verylightBlue: #EBFEFF;
     --color-gray: #bbbbbb;
     
     --color-lightText: #888888;
@@ -110,7 +111,7 @@
     margin: 90px 0;
 }
 
-.aboutComunitry .max-content{
+.aboutComunitry .max-content, .Comunity .max-content{
     display: -webkit-flex;
     display: flex;
 }
@@ -233,4 +234,40 @@
     background: url(../imgs/react-logo-fitas.png) center no-repeat;
     background-size: cover;
     animation: rotate360 linear 50s infinite 0.7s, fadeScaleOut  0.6s cubic-bezier(0.66,-0.04, 1, 1) 0.2s;
+}
+
+.Comunity{
+     padding: 70px 0;
+     background: var(--color-verylightBlue);
+}
+
+.Comunity .aboutComunitryRightContent .backgroundElement:after{
+    background: var(--color-primary);
+}
+
+.Comunity .aboutComunitryRightContent{
+    order: -1;
+    margin-left: 0;
+    margin-right:auto; 
+}
+
+.Comunity .aboutComunitryRightContent .box-logo{
+    width: 305px;
+    height: 345px;
+    left: auto;
+    right: -40px;
+}
+
+.Comunity .aboutComunitryRightContent .logo{
+    background: url(../imgs/comunity.jpg) center;
+    background-size: cover;
+}
+
+.Comunity .aboutComunitryRightContent .logo:after{
+    display: none;
+}
+
+.Comunity .aboutComunitryLeftContent p{
+    font-size: 18px;
+    line-height: 1.3;
 }
