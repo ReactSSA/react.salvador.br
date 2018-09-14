@@ -1,11 +1,103 @@
+/* vars */
+:root {
+    --font-title:'Patua One', cursive;
+    --font-subtitle: 'Fira Sans Extra Condensed', sans-serif;
+    --font-texts: 'Merriweather Sans', sans-serif;
+
+    --color-primary: #282d5f;
+    --color-lightBlue: #94fbff;
+    --color-gray: #bbbbbb;
+    
+    --color-lightText: #888888;
+    --color-text: #5a5a5a;
+}
+
+
+/* animations */
+@keyframes rotate360{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideCenter{
+    to{
+        transform: translate(0,0);
+    }
+}
+
+@keyframes fadeScaleOut{
+    from{
+        transform: scale(1.2)
+    }
+    to{
+        transform: scale(1)
+    }
+}
+@keyframes width{
+    from{
+        width: 0;
+    }
+}
+
+@keyframes textFadeIn{
+    from{
+        opacity: 0;
+        transform: translate(0,60px) rotate(5deg);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0) rotate(0);
+    }
+}
+
+/* reset */
 *{
     margin: 0;
     padding: 0;
 }
-.fonts{
-    font-family: 'Francois One', sans-serif;
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-family: 'Merriweather Sans', sans-serif;
+
+/* styles */
+
+.general-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    background: white;
+    z-index: 20;
+}
+
+.general-header .max-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.general-header .txtLogo{
+    font-size: 24px;
+    font-family: var(--font-subtitle);
+}
+.general-header .txtLogo strong{
+    font-family: var(--font-title);
+}
+
+.general-header nav{
+    display: flex;
+}
+.general-header nav a{
+    font-family: var(--font-texts);
+    padding: 10px 20px;
+    position: relative;
+    color: #34495e;
+    display: block;
+    text-transform: none;
+    font-size: 14px;
+    text-decoration: none;
+}
+.general-header nav a:hover{
+    text-decoration: underline;
 }
 
 .max-content{
@@ -15,7 +107,7 @@
 }
 
 .aboutComunitry{
-    margin: 60px 0;
+    margin: 90px 0;
 }
 
 .aboutComunitry .max-content{
@@ -35,48 +127,110 @@
 }
 
 .aboutComunitryLeftContent h1{
-    font-family: 'Francois One', sans-serif;
+    font-family: var(--font-title);
     font-size: 60px;
     position: relative;
     z-index: 2;
-    color: #6e92ff;
+    color: var(--color-primary);
+    opacity: 0;
+    margin-bottom: 10px;
+    animation: textFadeIn 0.5s cubic-bezier(0.16, 0.74, 0.11, 0.96) 0.4s forwards;
 }
 
 .aboutComunitryLeftContent h1:after {
     content:'';
     position: absolute;
-    bottom: 10px;
+    bottom: 6px;
     left: 0;
     width: 100%;
     height: 15px;
-    background: #5bd7ef;
+    background: var(--color-lightBlue);
     z-index: -1;
+    animation: width 0.2s ease-out 0.7s both;
 }
 
 
 .aboutComunitryLeftContent p{
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-family: var(--font-texts);
     font-size: 23px;
     max-width: 369px;
-    color: #888888;
+    color: var(--color-lightText);
     line-height: 1.1;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease-in-out 0.4s forwards;
 }
 
-.aboutComunitryRightContent {
+.aboutComunitryRightContent { 
     width: 325px;
     height: 400px;
-    background: #e1feff;
     margin-left: auto;
     position: relative;
+}
+
+.aboutComunitryRightContent .backgroundElement{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.aboutComunitryRightContent .backgroundElement:after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-lightBlue);
+    transform: translate(100%, 0);
+    transform-origin: right center;
+    animation: slideCenter cubic-bezier(0.81, 0.15, 0.26, 0.99) 0.4s forwards;
 }
 
 .aboutComunitryRightContent .box-logo{
     position: absolute;
     width: 260px;
     height: 305px;
-    background: url(../imgs/react-logo-fitas.png) center no-repeat #282d5f;
-    background-size: 150px;
-    left: -40px;
-    top: 50%;
+    overflow: hidden;
     transform: translate(0, -50%);
+    top: 50%;
+    left: -40px;
+}
+
+.aboutComunitryRightContent .box-logo:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--color-gray);
+    transform: translate(-100%,0);
+    transform-origin: center left;
+    animation: slideCenter 0.4s cubic-bezier(0.81, 0.15, 0.26, 0.99) 0.15s  forwards;
+}
+
+.aboutComunitryRightContent .logo{
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translate(100%,0);
+    transform-origin: center right;
+    animation: slideCenter 0.4s cubic-bezier(0.81, 0.15, 0.26, 0.99) 0.4s  forwards;
+    z-index: 2;
+}
+
+.aboutComunitryRightContent .logo:after{
+    content:'';
+    width: 150px;
+    height: 130px;
+    background: url(../imgs/react-logo-fitas.png) center no-repeat;
+    background-size: cover;
+    animation: rotate360 linear 50s infinite 0.7s, fadeScaleOut  0.6s cubic-bezier(0.66,-0.04, 1, 1) 0.2s;
 }
