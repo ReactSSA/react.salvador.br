@@ -52,25 +52,61 @@
             </div>
         </div>
     </section>
-    
-    
-    
-    <div class="container">
-        <!-- <img id="logo-image" src="assets/imgs/react-logo-fitas.png" alt="Logo do React Salvador composto por fitas do Senhor do Bomfim"> -->
-        <!-- <img id="logo-text" src="assets/imgs/react-ssa-text.png" alt="Logo do React Salvador composto por fitas do Senhor do Bomfim"> -->
 
-        <form id="meetup-notification-form">
-            <h2>Quer ser avisado sobre os próximos encontros?</h2>
-            <input type="email" id="email" placeholder="Digite seu email e pressione enter" />
-        </form>
+    <section class="meetups">
+        <div class="max-content">
+            <h1>Ultimos meetups</h1>
 
-        <div class="social">
-          <a rel="external" target="_blank" href="https://github.com/ReactSSA" class="github">ReactSSA</a>
-          <a rel="external" target="_blank" href="https://twitter.com/ReactSSA" class="twitter">@ReactSSA</a>
-          <a rel="external" target="_blank" href="https://facebook.com/reactssa" class="facebook">React Salvador</a>
+            <div class="meetups-list">
+                <div class="meetup">
+                    <h3>30/08/2018</h3>
+                    <h2>Testes em componentes React.</h2>
+                </div>
+                <div class="meetup">
+                    <h3>02/08/2018</h3>
+                    <h2>GraphQL - A evolução do REST</h2>
+                </div>
+                <div class="meetup">
+                    <h3>19/07/2018</h3>
+                    <h2>Estruturando componentes</h2>
+                </div>
+                <div class="meetup">
+                    <h3>28/06/2018</h3>
+                    <h2>A pedra no sapato do front-end</h2>
+                </div>
+                <div class="meetup">
+                    <h3>07/06/2018</h3>
+                    <h2>Redux vs MobX - Gerenciadores de estado para React</h2>
+                </div>
+                <div class="meetup">
+                    <h3>10/05/2018</h3>
+                    <h2>ES6+ O presente e o futuro do JavaScript</h2>
+                </div>
+                <div class="meetup">
+                    <h3>10/04/2018</h3>
+                    <h2>Da Web ao App</h2>
+                </div>
+            </div>
+
+            <form id="meetup-notification-form">
+                <h2>Quer ser avisadx sobre os próximos encontros?</h2>
+                <fieldset>
+                    <input type="email" id="email" name="email" autocomplete="off" placeholder="Digite seu email" />
+                    <button id="button"><i class="fas fa-check"></i>Me avise</button>
+                </fieldset>
+            </form>
         </div>
+    </section>
+    
+    <div class="social">
+        <a rel="external" target="_blank" href="https://github.com/ReactSSA" class="github">ReactSSA</a>
+        <a rel="external" target="_blank" href="https://twitter.com/ReactSSA" class="twitter">@ReactSSA</a>
+        <a rel="external" target="_blank" href="https://facebook.com/reactssa" class="facebook">React Salvador</a>
     </div>
-
+    
+      
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed|Patua+One|Merriweather+Sans" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-database.js"></script>

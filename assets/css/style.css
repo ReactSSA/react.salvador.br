@@ -7,7 +7,9 @@
     --color-primary: #282d5f;
     --color-lightBlue: #94fbff;
     --color-verylightBlue: #EBFEFF;
+    --color-lightGray: #e6e6e6;
     --color-gray: #bbbbbb;
+    --color-green: #269535;
     
     --color-lightText: #888888;
     --color-text: #5a5a5a;
@@ -52,6 +54,21 @@
     }
 }
 
+@keyframes loadingFadeIn{
+    from{
+        transform: scale(0.6) translate(-50%,-50%);
+    }
+    to{
+        transform: scale(1) translate(-50%,-50%);
+        opacity: 1;
+    }
+}
+@keyframes loading{
+    to{
+        width: 100%;
+    }
+}
+
 /* reset */
 *{
     margin: 0;
@@ -68,6 +85,10 @@
     padding: 12px 0;
     background: white;
     z-index: 20;
+}
+
+.general-header.scrolling{
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
 }
 
 .general-header .max-content{
@@ -127,7 +148,8 @@
     justify-content: center;
 }
 
-.aboutComunitryLeftContent h1{
+.aboutComunitryLeftContent h1, .meetups h1{
+    display: inline-block;
     font-family: var(--font-title);
     font-size: 60px;
     position: relative;
@@ -138,7 +160,7 @@
     animation: textFadeIn 0.5s cubic-bezier(0.16, 0.74, 0.11, 0.96) 0.4s forwards;
 }
 
-.aboutComunitryLeftContent h1:after {
+.aboutComunitryLeftContent h1:after, .meetups h1:after {
     content:'';
     position: absolute;
     bottom: 6px;
@@ -243,8 +265,13 @@
 
 .Comunity .aboutComunitryRightContent .backgroundElement:after{
     background: var(--color-primary);
+    transform: translate(-100%,0);
 }
 
+.Comunity .aboutComunitryRightContent .box-logo:before{
+    transform: translate(100%,0);
+}
+ 
 .Comunity .aboutComunitryRightContent{
     order: -1;
     margin-left: 0;
@@ -261,6 +288,7 @@
 .Comunity .aboutComunitryRightContent .logo{
     background: url(../imgs/comunity.jpg) center;
     background-size: cover;
+    transform: translate(-100%,0);
 }
 
 .Comunity .aboutComunitryRightContent .logo:after{
@@ -270,4 +298,106 @@
 .Comunity .aboutComunitryLeftContent p{
     font-size: 18px;
     line-height: 1.3;
+}
+
+.meetups{
+    padding: 80px 0 90px;
+}
+
+.meetups-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 35px -10px 0;
+}
+
+.meetup{
+    padding: 20px;
+    width: calc(33.33% - 62px);
+    height: 90px;
+    background: var(--color-verylightBlue);
+    border: 1px solid var(--color-lightBlue);
+    margin: 10px;
+    position: relative;
+}
+
+.meetup h2{
+    font-family: var(--font-subtitle);
+    font-size: 22px;
+    color:var(--color-primary);
+}
+
+.meetup h3{
+    font-size: 12px;
+    font-family: var(--font-texts);
+    color:var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.meetups form h2{
+    display: block;
+    font-family: var(--font-title);
+    font-size: 23px;
+    position: relative;
+    z-index: 2;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+    margin-top: 40px;
+}
+
+.meetups form fieldset{
+    border:none;
+}
+.meetups form input{
+    padding: 16px; 
+    outline: 0;
+    border:none;
+    background: var(--color-lightGray);
+    min-width: 220px;
+}
+.meetups form button{
+    padding: 14px 16px;
+    border: none;
+    color: var(--color-primary);
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    box-shadow: 2px 2px 0 var(--color-primary);
+    font-family: var(--font-title);
+    transition: all ease-in-out 0.3s;
+    margin-left: 4px;
+    transform: translate(-2px,-2px);
+    cursor: pointer;
+    outline: 0;
+    position: relative;
+}
+
+.meetups form button.active:before{
+    content:'';
+    background: var(--color-green);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    animation: loading 0.4s ease-in-out forwards;
+    z-index: 1;
+}
+
+.meetups form button i{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    opacity: 0;
+    z-index: 2;
+    transform-origin: center;
+}
+.meetups form button.active i{
+    animation: loadingFadeIn 0.3s ease-in 0.2s forwards;
+}
+
+.meetups form button:hover, .meetups form button.active{
+    transform: translate(0,0);
+    box-shadow: 0px 0px 0 var(--color-primary);
 }

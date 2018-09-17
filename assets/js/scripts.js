@@ -14,12 +14,13 @@ document.getElementById("meetup-notification-form").addEventListener("submit", f
     e.preventDefault();
 
     var emailInputEl = document.getElementById("email");
+    var button = document.getElementById("button");
+
     emailsStore.push({
         email: emailInputEl.value
     }).then(function () {
-        emailInputEl.value = "Pronto, anotado!";
         emailInputEl.disabled = true;
-        emailInputEl.style.color = "#229400";
+        button.classList = 'active';
     }).catch(function () {
         emailInputEl.value = "Erro, nos avise lá no github!";
     });
