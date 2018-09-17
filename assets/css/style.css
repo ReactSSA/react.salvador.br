@@ -353,6 +353,7 @@
     border:none;
     background: var(--color-lightGray);
     min-width: 220px;
+    font-family: var(--font-texts);
 }
 .meetups form button{
     padding: 14px 16px;

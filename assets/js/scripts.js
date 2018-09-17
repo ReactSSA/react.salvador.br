@@ -24,4 +24,24 @@ document.getElementById("meetup-notification-form").addEventListener("submit", f
     }).catch(function () {
         emailInputEl.value = "Erro, nos avise lá no github!";
     });
-})
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(function(element) {
+    element.addEventListener('click', function (event) {
+        var target = document.getElementById(this.href.split('#')[1]);
+        scrollWindowTo(target.offsetTop);
+        event.preventDefault();
+    })
+}, this);
+
+function scrollWindowTo(pos){
+    var currentPos = Math.round(window.scrollY);
+    var direction = currentPos < pos ? 1 : -1;
+    var frame = 1;
+    for (var index = currentPos; index !== pos; index += direction) {
+        setTimeout(function(i) {
+            window.scrollTo(0,i);
+        }, frame, index);
+        frame+=0.3;
+    }
+}
