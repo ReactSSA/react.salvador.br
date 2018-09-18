@@ -37,11 +37,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function(element) {
 function scrollWindowTo(pos){
     var currentPos = Math.round(window.scrollY);
     var direction = currentPos < pos ? 1 : -1;
-    var frame = 1;
+    var speed = 1;
     for (var index = currentPos; index !== pos; index += direction) {
         setTimeout(function(i) {
             window.scrollTo(0,i);
-        }, frame, index);
-        frame+=0.3;
+        }, speed, index);
+        speed+=0.3;
     }
 }
