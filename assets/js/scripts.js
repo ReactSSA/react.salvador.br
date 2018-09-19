@@ -45,3 +45,13 @@ function scrollWindowTo(pos){
         speed+=0.3;
     }
 }
+
+var headerElement = document.getElementsByClassName('general-header')[0];
+updateClassHeader();
+window.onscroll = function () {
+    updateClassHeader();
+}
+
+function updateClassHeader(){
+    headerElement.classList = "general-header " + (window.scrollY > 0 ? "scrolling" : "");
+}

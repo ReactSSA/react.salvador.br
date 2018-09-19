@@ -85,11 +85,11 @@
     padding: 12px 0;
     background: white;
     z-index: 20;
-    box-shadow: 0 0 4px #b9b9b9;
+    
 }
 
 .general-header.scrolling{
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px #b9b9b9;
 }
 
 .general-header .max-content{
@@ -214,13 +214,13 @@
 }
 
 .aboutComunitryRightContent .box-logo{
-    position: absolute;
-    width: 260px;
-    height: 305px;
+   position: absolute;
+    width: 320px;
+    height: 360px;
     overflow: hidden;
     transform: translate(0, -50%);
     top: 50%;
-    left: -40px;
+    left: -55px;
 }
 
 .aboutComunitryRightContent .box-logo:before{
@@ -252,8 +252,8 @@
 
 .aboutComunitryRightContent .logo:after{
     content:'';
-    width: 150px;
-    height: 130px;
+    width: 240px;
+    height: 210px;
     background: url(../imgs/react-logo-fitas.png) center no-repeat;
     background-size: cover;
     animation: rotate360 linear 50s infinite 0.7s, fadeScaleOut  0.6s cubic-bezier(0.66,-0.04, 1, 1) 0.2s;
