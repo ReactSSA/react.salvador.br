@@ -17,12 +17,6 @@
 
 
 /* animations */
-@keyframes rotate360{
-    to{
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes slideCenter{
     to{
         transform: translate(0,0);
@@ -85,7 +79,6 @@
     padding: 12px 0;
     background: white;
     z-index: 20;
-    
 }
 
 .general-header.scrolling{
@@ -101,6 +94,8 @@
 .general-header .txtLogo{
     font-size: 24px;
     font-family: var(--font-subtitle);
+    text-decoration: none;
+    color:black;
 }
 .general-header .txtLogo strong{
     font-family: var(--font-title);
@@ -256,7 +251,7 @@
     height: 210px;
     background: url(../imgs/react-logo-fitas.png) center no-repeat;
     background-size: cover;
-    animation: rotate360 linear 50s infinite 0.7s, fadeScaleOut  0.6s cubic-bezier(0.66,-0.04, 1, 1) 0.2s;
+    animation: fadeScaleOut 0.6s cubic-bezier(0.66,-0.04, 1, 1) 0.2s;
 }
 
 .Comunity{
